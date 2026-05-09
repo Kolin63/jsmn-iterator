@@ -2,7 +2,8 @@ include/*
 lib/*
 .cache/*
 compile_commands.json
-program
+test1
+example1
 
 build/*
 CMakeLists.txt.user
