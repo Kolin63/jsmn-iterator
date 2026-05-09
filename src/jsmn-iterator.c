@@ -82,7 +82,11 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
   } else if (iter->root->type == JSMN_ARRAY) {
     // otherwise, root is an array, so no key
     iter->key = NULL;
-    iter->val += 1 + jsmn_iterator_get_size_recursive(iter->val);
+    if (iter->val == NULL) {
+      iter->val = iter->root + 1;
+    } else {
+      iter->val += 1 + jsmn_iterator_get_size_recursive(iter->val);
+    }
   }
 
   iter->type = iter->val->type;
