@@ -84,5 +84,8 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
     iter->key = NULL;
     iter->val += 1 + jsmn_iterator_get_size_recursive(iter->val);
   }
+
+  iter->type = iter->val->type;
+
   return 1;
 }
