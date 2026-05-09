@@ -45,7 +45,8 @@ int main() {
   for (int i = 0; i < used; i++) {
     const jsmntok_t* tok = tokens + i;
     if (tok == NULL) break;
-    printf("%i: %s size %i start %i end %i\n", i, jsmn_iterator_type_to_str(tok->type), tok->size, tok->start, tok->end);
+    printf("%i: %s size %i start %i end %i\n",
+           i, jsmn_iterator_type_to_str(tok->type), tok->size, tok->start, tok->end);
   }
 
   struct jsmn_iterator iter;
