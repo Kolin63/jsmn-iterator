@@ -75,12 +75,12 @@ that is passed to jsmn_parse()
 const char* jsmn_iterator_type_to_str(jsmntype_t type);
 ```
 converts JSMN integer error code into a string return values:
-      0: "JSMN_UNDEFINED"
-      1: "JSMN_OBJECT"
-      2: "JSMN_ARRAY"
-      4: "JSMN_STRING"
-      8: "JSMN_PRIMITIVE"
-default: "ERROR - NOT A TYPE"
+* 0: "JSMN_UNDEFINED"
+* 1: "JSMN_OBJECT"
+* 2: "JSMN_ARRAY"
+* 4: "JSMN_STRING"
+* 8: "JSMN_PRIMITIVE"
+* default: "ERROR - NOT A TYPE"
 
 ### jsmn_iterator_init()
 ```c
