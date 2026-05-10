@@ -58,8 +58,8 @@ not write to any of these fields
 ```c
 void jsmn_iterator_get_string(char* buf, unsigned long size, const char* json, const jsmntok_t* tok);
 ```
-gets the string value of a JSMN token and puts it in a string buffer. size is
-the length of the buffer, including the null terminator. json is the string of
+gets the string value of a JSMN token and puts it in a string buffer. `size` is
+the length of the buffer, including the null terminator. `json` is the string of
 the json content, and the same string that is passed to `jsmn_parse()`
 
 ### jsmn_iterator_get_string_heap()
@@ -67,27 +67,27 @@ the json content, and the same string that is passed to `jsmn_parse()`
 char* jsmn_iterator_get_string_heap(const char* json, const jsmntok_t* tok);
 ```
 gets the string value of a JSMN token and puts it on the heap. the string must
-be freed after use. json is the string of the json content, and the same string
-that is passed to jsmn_parse()
+be freed after use. `json` is the string of the json content, and the same
+string that is passed to `jsmn_parse()`
 
 ### jsmn_iterator_type_to_str()
 ```c
 const char* jsmn_iterator_type_to_str(jsmntype_t type);
 ```
 converts JSMN integer error code into a string return values:
-* 0: "JSMN_UNDEFINED"
-* 1: "JSMN_OBJECT"
-* 2: "JSMN_ARRAY"
-* 4: "JSMN_STRING"
-* 8: "JSMN_PRIMITIVE"
-* default: "ERROR - NOT A TYPE"
+* 0: `"JSMN_UNDEFINED"`
+* 1: `"JSMN_OBJECT"`
+* 2: `"JSMN_ARRAY"`
+* 4: `"JSMN_STRING"`
+* 8: `"JSMN_PRIMITIVE"`
+* default: `"ERROR - NOT A TYPE"`
 
 ### jsmn_iterator_init()
 ```c
 void jsmn_iterator_init(struct jsmn_iterator* iter, const jsmntok_t* root, const char* json);
 ```
-root is the root object/array to iterate over. json is the string of the json
-content, and the same string that is passed to jsmn_parse()
+`root` is the root object/array to iterate over. `json` is the string of the
+json content, and the same string that is passed to `jsmn_parse()`
 
 ### jsmn_iterator_next()
 ```c
