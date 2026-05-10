@@ -50,8 +50,8 @@ char* jsmn_iterator_get_string_heap(const char* json, const jsmntok_t* tok) {
   return str;
 }
 
-const char* jsmn_iterator_type_to_str(int err) {
-  switch (err) {
+const char* jsmn_iterator_type_to_str(jsmntype_t type) {
+  switch (type) {
   case (0):
     return "JSMN_UNDEFINED";
   case (1 << 0):

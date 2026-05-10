@@ -45,7 +45,7 @@ struct jsmn_iterator {
 void jsmn_iterator_get_string(char* buf, unsigned long size, const char* json, const jsmntok_t* tok);
 char* jsmn_iterator_get_string_heap(const char* json, const jsmntok_t* tok);
 
-const char* jsmn_iterator_type_to_str(int err);
+const char* jsmn_iterator_type_to_str(jsmntype_t type);
 
 void jsmn_iterator_init(struct jsmn_iterator* iter, const jsmntok_t* root, const char* json);
 int jsmn_iterator_next(struct jsmn_iterator* iter);
