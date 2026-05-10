@@ -1,5 +1,5 @@
 /*
-   jsmn-iterator.h - from the jsmn-iterator library by Colin Melican (Kolin63)
+   jsmn_iterator.h - from the jsmn-iterator library by Colin Melican (Kolin63)
 
    https://github.com/kolin63/jsmn-iterator
 

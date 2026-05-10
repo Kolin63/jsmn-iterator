@@ -14,11 +14,11 @@ A 2-file C99 library that implements an easy to use iterator for
   - [jsmn_iterator_next()](#jsmn_iterator_next)
 
 ## Usage
-You can add `src/jsmn-iterator.c` and `src/jsmn-iterator.h` to your project
+You can add `src/jsmn_iterator.c` and `src/jsmn_iterator.h` to your project
 (this code is under the MIT License).
 
 Alternatively, you can build the library from source using CMake. Then, put
-`src/jsmn-iterator.h` in an include directory and `libjsmn-iterator.a` in a lib
+`src/jsmn_iterator.h` in an include directory and `libjsmn-iterator.a` in a lib
 directory.
 
 ## Examples
@@ -31,7 +31,7 @@ This can also be found in the examples folder.
 #include <stdio.h>
 #include <string.h>
 
-#include "jsmn-iterator.h"
+#include "jsmn_iterator.h"
 
 // normally this would be read from a file
 const char* json_str =

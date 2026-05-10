@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "jsmn-iterator.h"
+#include "jsmn_iterator.h"
 
 // normally this would be read from a file
 const char* json_str =

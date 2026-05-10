@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "jsmn-iterator.h"
+#include "jsmn_iterator.h"
 #include "jsmn.h"
 
 static int tests_passed = 0;
