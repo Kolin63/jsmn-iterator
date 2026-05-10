@@ -38,7 +38,7 @@ struct jsmn_iterator {
   // type of value
   jsmntype_t type;
 
-  // index of value. first value is 0
+  // index of value. root object/array is 0
   unsigned int i;
 
   // string value of key. NULL if root is an array
