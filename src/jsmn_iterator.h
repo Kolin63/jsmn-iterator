@@ -35,9 +35,6 @@
 // used to iterate through JSMN tokens. initialized with jsmn_iterator_init().
 // do not write to any of these fields
 struct jsmn_iterator {
-  // type of value
-  jsmntype_t type;
-
   // index of value. root object/array is 0
   unsigned int i;
 

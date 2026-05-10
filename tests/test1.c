@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#include "jsmn_iterator.h"
 #include "jsmn.h"
+#include "jsmn_iterator.h"
 
 static int tests_passed = 0;
 static int tests_total = 0;
@@ -35,7 +35,7 @@ void equals_check_string(const char* x, const char* y, const char* file, int lin
 void iter_check(const struct jsmn_iterator* iter, const char* valstr,
                 const jsmntype_t type, const char* key, const char* val,
                 const char* file, const int line) {
-  equals_check_int(type, iter->type, file, line);
+  equals_check_int(type, iter->val->type, file, line);
   equals_check_string(key, iter->key, file, line);
   equals_check_string(val, valstr, file, line);
 }

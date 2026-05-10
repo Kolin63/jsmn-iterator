@@ -79,7 +79,6 @@ int jsmn_iterator_get_size_recursive(const jsmntok_t* root) {
 }
 
 void jsmn_iterator_init(struct jsmn_iterator* iter, const jsmntok_t* root, const char* json) {
-  iter->type = root->type;
   iter->i = 0;
   iter->key = NULL;
   iter->val = root;
@@ -116,7 +115,6 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
     }
   }
 
-  iter->type = iter->val->type;
   iter->i++;
 
   return 1;
