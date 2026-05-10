@@ -52,15 +52,15 @@ char* jsmn_iterator_get_string_heap(const char* json, const jsmntok_t* tok) {
 
 const char* jsmn_iterator_type_to_str(jsmntype_t type) {
   switch (type) {
-  case (0):
+  case (JSMN_UNDEFINED):
     return "JSMN_UNDEFINED";
-  case (1 << 0):
+  case (JSMN_OBJECT):
     return "JSMN_OBJECT";
-  case (1 << 1):
+  case (JSMN_ARRAY):
     return "JSMN_ARRAY";
-  case (1 << 2):
+  case (JSMN_STRING):
     return "JSMN_STRING";
-  case (1 << 3):
+  case (JSMN_PRIMITIVE):
     return "JSMN_PRIMITIVE";
   }
   return "ERROR - NOT A TYPE";
