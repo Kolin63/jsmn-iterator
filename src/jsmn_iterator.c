@@ -82,7 +82,7 @@ void jsmn_iterator_init(struct jsmn_iterator* iter, const jsmntok_t* root, const
   iter->type = root->type;
   iter->i = 0;
   iter->key = NULL;
-  iter->val = NULL;
+  iter->val = root;
 
   iter->root = root;
   iter->json = json;
@@ -95,12 +95,11 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
   }
 
   if (iter->i >= iter->root->size) return 0;
-  iter->i++;
 
   // if it's an object (not an array) the values have keys
   if (iter->root->type == JSMN_OBJECT) {
     const jsmntok_t* key;
-    if (iter->val == NULL) {
+    if (iter->i == 0) {
       key = iter->root + 1;
     } else {
       key = iter->val + 1 + jsmn_iterator_get_size_recursive(iter->val);
@@ -110,7 +109,7 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
   } else if (iter->root->type == JSMN_ARRAY) {
     // otherwise, root is an array, so no key
     iter->key = NULL;
-    if (iter->val == NULL) {
+    if (iter->i == 0) {
       iter->val = iter->root + 1;
     } else {
       iter->val += 1 + jsmn_iterator_get_size_recursive(iter->val);
@@ -118,6 +117,7 @@ int jsmn_iterator_next(struct jsmn_iterator* iter) {
   }
 
   iter->type = iter->val->type;
+  iter->i++;
 
   return 1;
 }
