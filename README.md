@@ -75,7 +75,7 @@ int main() {
 
     // print the type, key, and value. the iterator stores the key as its string
     // value, so we don't need to convert that
-    printf("(%s) %s: %s\n", jsmn_iterator_type_to_str(iter.type), iter.key, val);
+    printf("(%s) %s: %s\n", jsmn_iterator_type_to_str(iter.val->type), iter.key, val);
 
     // we also want to iterate over the users array. if the key of the current
     // value is users, we make a new iterator and iterate over the array
@@ -91,7 +91,7 @@ int main() {
         // an array printing the index in this way makes it look like a
         // one-indexed array because index 0 is the root, so index 1 is the
         // first value
-        printf("(%s) %i: %s\n", jsmn_iterator_type_to_str(user_iter.type), user_iter.i, name);
+        printf("(%s) %i: %s\n", jsmn_iterator_type_to_str(user_iter.val->type), user_iter.i, name);
       }
     }
   }
@@ -118,9 +118,6 @@ int main() {
 ### struct jsmn_iterator
 ```c
 struct jsmn_iterator {
-  // type of value
-  jsmntype_t type;
-
   // index of value. root object/array is 0
   unsigned int i;
 
